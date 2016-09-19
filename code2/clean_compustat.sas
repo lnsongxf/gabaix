@@ -5,18 +5,18 @@ Notes: Creates a dataset with the needed variables from the Compustat Fundementa
 Path of WRDS Server: /wrds/comp/sasdata/d_na/fundq.sas7bdat
 ***************************************************************************************************/
 
-libname compu "/wrds/comp/sasdata/d_na/";
+*libname compu "/wrds/comp/sasdata/naa/";
 libname home "/home/columbia/js4956/";
 
 
 data annual_var;
-  set compu.funda(keep = gvkey fyear sic);
+  set comp.company(keep = gvkey year hsic);
 run;
 
-
+endsas;
 
 data variables;
-  set compu.fundq(keep = gvkey datadate fyear datacqtr salesq);
+  set comp.fundq(keep = gvkey datadate fyear datacqtr salesq);
 run;
 
 
