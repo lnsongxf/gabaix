@@ -8,7 +8,11 @@ Path of WRDS Server: /wrds/comp/sasdata/d_na/fundq.sas7bdat
 *libname compu "/wrds/comp/sasdata/naa/";
 libname home "/home/columbia/js4956/";
 
+proc contents data = compm.company;
+run;
 
+
+endsas;
 data annual_var;
   set compm.company(keep = gvkey year sich);
 run;
