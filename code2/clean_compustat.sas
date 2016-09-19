@@ -8,13 +8,8 @@ Path of WRDS Server: /wrds/comp/sasdata/d_na/fundq.sas7bdat
 *libname compu "/wrds/comp/sasdata/naa/";
 libname home "/home/columbia/js4956/";
 
-proc contents data = compm.company;
-run;
-
-
-endsas;
 data annual_var;
-  set compm.company(keep = gvkey year sich);
+  set compm.company(keep = gvkey sic);
 run;
 
 data variables;
@@ -24,5 +19,5 @@ run;
 proc sql;
   alter table variables as A
     add B.sic from annual_var as B
-    where A.gvkey=B.gvkey and A.fyear = B.fyear;
+    where A.gvkey=B.gvkey;
 quit;
