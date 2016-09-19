@@ -12,6 +12,10 @@ data annual_var;
   set compm.company(keep = gvkey sic);
 run;
 
+proc contents data = comp.fundq;
+run;
+
+endsas;
 data variables;
   set comp.fundq(keep = gvkey datadate fyear datacqtr salesq);
 run;
