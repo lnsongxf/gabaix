@@ -10,15 +10,12 @@ libname home "/home/columbia/js4956/";
 
 
 data annual_var;
-  set comp.company(keep = gvkey year hsic);
+  set compm.company(keep = gvkey year sich);
 run;
-
-endsas;
 
 data variables;
   set comp.fundq(keep = gvkey datadate fyear datacqtr salesq);
 run;
-
 
 proc sql;
   alter table variables as A
