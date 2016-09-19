@@ -15,9 +15,8 @@ run;
 proc contents data = comp.fundq;
 run;
 
-endsas;
 data variables;
-  set comp.fundq(keep = gvkey datadate fyear datacqtr salesq);
+  set comp.fundq(keep = gvkey datadate fyear datacqtr saleq);
 run;
 
 proc sql;
