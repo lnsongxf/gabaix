@@ -84,7 +84,11 @@ data home.variables;
   set panel;
 run;
 
-
+proc export data = panel
+  outfile = "~/variables.dta"
+  DBMS = dta
+  REPALCE;
+run;
 
 
 
