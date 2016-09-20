@@ -2,7 +2,8 @@
 Author: Joseph Saia
 Date: Sep 19 2016
 Notes: Creates a dataset with the needed variables from the Compustat Fundementals-Quarterly dataset
-Path of WRDS Server: /wrds/comp/sasdata/d_na/fundq.sas7bdat
+This script should be run on the WRDS server and will save an output dataset with a panel data 
+structure with gvkey and date as the keys. Date is the corresponding calendar date of the sales data
 ***************************************************************************************************/
 options linesize=100 pagesize = 50 ;
 libname home "/home/columbia/js4956/";
